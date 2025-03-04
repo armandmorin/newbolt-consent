@@ -1,0 +1,29 @@
+# This file configures how Netlify builds and deploys your site
+
+[build]
+  # Directory to publish (output of the build process)
+  publish = "dist"
+  # Build command
+  command = "npm run build"
+  # Directory where functions are located
+  functions = "netlify/functions"
+
+# This redirects all routes back to index.html for client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  
+# Special redirect for API routes to Netlify Functions
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  force = true
+
+# Direct snippet access - CRITICAL for the consent script
+[[redirects]]
+  from = "/api/snippet/*"
+  to = "/.netlify/functions/snippet"
+  status = 200
+  force = true

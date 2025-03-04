@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 249, 250, 251;
+}
+
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 17, 24, 39;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(var(--background-rgb));
+}
+
+/* Improve form elements in dark mode */
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: rgb(31, 41, 55);
+  border-color: rgb(55, 65, 81);
+  color: rgb(229, 231, 235);
+}
+
+.dark input::placeholder,
+.dark select::placeholder,
+.dark textarea::placeholder {
+  color: rgb(156, 163, 175);
+}
+
+/* Improve table styles in dark mode */
+.dark th,
+.dark td {
+  border-color: rgb(55, 65, 81);
+}
+
+.dark thead {
+  background-color: rgb(31, 41, 55);
+}
+
+.dark tbody tr:hover {
+  background-color: rgb(31, 41, 55);
+}
